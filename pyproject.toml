@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "binance-futures-trading-bot"
+version = "1.0.0"
+description = "A clean, structured Python trading bot for Binance Futures Testnet (USDT-M) with interactive CLI UX."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Ayush Kumar" }
+]
+dependencies = [
+    "requests>=2.31.0",
+    "rich>=13.7.0",
+    "typer>=0.9.0",
+    "python-dotenv>=1.0.0",
+    "questionary>=2.0.1"
+]
+
+[project.scripts]
+trading-bot = "trading_bot.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["trading_bot*"]
